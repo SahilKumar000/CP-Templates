@@ -1,10 +1,10 @@
-vector<int> prefix_function(string s) {
-    int n = (int)s.length();
-    vector<int> pi(n);
+vector<int> kmp(string s) {
+    int n = s.length();
+    vector<int> kmp(n,0);
     for (int i = 1; i < n; i++) {
-        int j = pi[i-1];
+        int j = kmp[i-1];
         while (j > 0 && s[i] != s[j])
-            j = pi[j-1];
+            j = kmp[j-1];
         if (s[i] == s[j])
             j++;
         pi[i] = j;
