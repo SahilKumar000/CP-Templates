@@ -5,7 +5,7 @@ vector<int> kmp(string s) {
         int prev_index = kmp[i-1];
         while (prev_index > 0 && s[i] != s[j])
             prev_index = kmp[j-1];
-        kmp[i] = prev_index + (s[i]==s[prev_index])?1:0;
+        kmp[i] = prev_index + (s[i]==s[prev_index]?1:0);
      }
     return kmp;
 }
