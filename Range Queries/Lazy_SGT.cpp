@@ -88,7 +88,7 @@ struct LazySGT {
 
 struct Node1 {
     ll val; // may change
-    Node1() { // Identity element
+    Node1() { // Identity element // leaf Node
         val = 0;    // may change
     }
     Node1(ll p1) {  // Actual Node
@@ -110,7 +110,7 @@ struct Update1 {
     void apply(Node1 &a, int start, int end) { // apply update to given node
         a.val = val * (end - start + 1); // may change
     }
-    void combine(Update1& new_update, int start, int end){
+    void combine(Update1& new_update, int start, int end){ // update in Lazy when pushing down
         val = new_update.val;
     }
 };
