@@ -110,7 +110,7 @@ struct Update1 {
     void apply(Node1 &a, int start, int end) { // apply update to given node
         a.val = val * (end - start + 1); // may change
     }
-    void combine(Update1& new_update, int start, int end){ // update in Lazy when pushing down
+    void combine(Update1& new_update, int start, int end){ // update in Lazy when pushing down // combining two updates...
         val = new_update.val;
     }
 };
